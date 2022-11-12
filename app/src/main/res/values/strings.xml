@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">EjercicioInventado01</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="spinner_Colores">
+        <item>Selecciona un Color</item>
+        <item>Amarillo</item>
+        <item>Rojo</item>
+        <item>Marrón</item>
+        <item>Verde</item>
+        <item>Lila</item>
+        <item>Rosa</item>
+    </string-array>
+</resources>
