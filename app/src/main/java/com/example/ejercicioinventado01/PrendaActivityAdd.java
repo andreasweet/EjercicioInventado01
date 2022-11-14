@@ -2,8 +2,10 @@ package com.example.ejercicioinventado01;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.ejercicioinventado01.Modelos.Prenda;
 import com.example.ejercicioinventado01.databinding.ActivityPrendaAddBinding;
@@ -26,6 +28,16 @@ public class PrendaActivityAdd extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Prenda prenda = crearPrenda();
+                if(prenda != null){
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("PRENDA",prenda);
+                    Intent intent = new Intent();
+                    intent.putExtras(bundle);
+                    setResult(RESULT_OK, intent);
+                    finish();
+                }else{
+                    Toast.makeText(PrendaActivityAdd.this, "FALTAN DATOS", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -36,7 +48,7 @@ public class PrendaActivityAdd extends AppCompatActivity {
         !binding.txtNombrePrendaAdd.getText().toString().isEmpty() &&
         !binding.txtTallaPrendaAdd.getText().toString().isEmpty() &&
         !binding.txtEstacionPrendaAdd.getText().toString().isEmpty()){
-
+            System.out.println("eeee");
             return new Prenda(binding.txtNombrePrendaAdd.getText().toString(),Integer.parseInt(binding.txtTallaPrendaAdd.getText().toString()), binding.txtEstacionPrendaAdd.getText().toString(), binding.spColorPrendaAdd.getSelectedItem().toString());
         }
         return null;

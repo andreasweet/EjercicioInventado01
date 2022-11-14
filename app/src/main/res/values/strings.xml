@@ -4,11 +4,10 @@
 
     <string-array name="spinner_Colores">
         <item>Selecciona un Color</item>
-        <item>Amarillo</item>
         <item>Rojo</item>
-        <item>Marrón</item>
-        <item>Verde</item>
+        <item>Blanco</item>
         <item>Lila</item>
         <item>Rosa</item>
+        <item>Gris</item>
     </string-array>
 </resources>
